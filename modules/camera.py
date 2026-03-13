@@ -1,10 +1,8 @@
 import cv2
-from config.settings import CAMERA_INDEX
 
 def start_camera():
-    cap = cv2.VideoCapture(CAMERA_INDEX)
-
+    cap = cv2.VideoCapture(0)
     if not cap.isOpened():
-        raise Exception("Camera not accessible")
-
+        print("[ERROR] Camera not found!")
+        return None
     return cap
